@@ -9,10 +9,10 @@ namespace PeopleKPMG.Application.Interfaces
 {
     public interface IPersonService
     {
-        Task<IEnumerable<PersonDto>> GetAllPersons();
-        Task<PersonDto> GetPersonById(int id);
-        Task AddPerson(PersonDto personDto);
-        Task UpdatePerson(int id, PersonDto personDto);
-        Task DeletePerson(int id);
+        Task<IEnumerable<PersonDto>> GetAllPersonsAsync();
+        Task<PersonDto> GetPersonByIdAsync(int id);
+        Task AddPersonAsync(PersonDto personDto);
+        Task UpdatePersonAsync(int id, PersonDto personDto);
+        Task DeletePersonAsync(int id);
     }
 }

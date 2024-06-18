@@ -20,6 +20,6 @@ namespace PeopleKPMG.Core.Entities
         public string Name { get; set; }
         public int Age { get; set; }
         public int PersonId { get; set; }
-        public required Person Person { get; set; }
+        public Person Person { get; set; }
     }
 }
