@@ -5,6 +5,14 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleKPMG.API", "PeopleKPMG.API\PeopleKPMG.API.csproj", "{206AA262-392B-41F0-B6D6-E080DB2615F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleKPMG.Core", "PeopleKPMG.Core\PeopleKPMG.Core.csproj", "{83DCFE35-5BE8-40C3-ABAB-427F392F0D6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleKPMG.Application", "PeopleKPMG.Application\PeopleKPMG.Application.csproj", "{845358A4-BB1D-40BF-8F0C-88F60A5016BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleKPMG.Infrastructure", "PeopleKPMG.Infrastructure\PeopleKPMG.Infrastructure.csproj", "{D0FB04F0-35B3-4A55-A92C-286FE00FA7E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleKPMG.Web", "PeopleKPMG.Web\PeopleKPMG.Web.csproj", "{14292310-7FE0-44D0-8DEA-F4B9FDAFD861}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{206AA262-392B-41F0-B6D6-E080DB2615F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{206AA262-392B-41F0-B6D6-E080DB2615F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{206AA262-392B-41F0-B6D6-E080DB2615F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DCFE35-5BE8-40C3-ABAB-427F392F0D6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DCFE35-5BE8-40C3-ABAB-427F392F0D6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DCFE35-5BE8-40C3-ABAB-427F392F0D6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DCFE35-5BE8-40C3-ABAB-427F392F0D6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845358A4-BB1D-40BF-8F0C-88F60A5016BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845358A4-BB1D-40BF-8F0C-88F60A5016BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845358A4-BB1D-40BF-8F0C-88F60A5016BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845358A4-BB1D-40BF-8F0C-88F60A5016BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0FB04F0-35B3-4A55-A92C-286FE00FA7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0FB04F0-35B3-4A55-A92C-286FE00FA7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0FB04F0-35B3-4A55-A92C-286FE00FA7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0FB04F0-35B3-4A55-A92C-286FE00FA7E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14292310-7FE0-44D0-8DEA-F4B9FDAFD861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14292310-7FE0-44D0-8DEA-F4B9FDAFD861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14292310-7FE0-44D0-8DEA-F4B9FDAFD861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14292310-7FE0-44D0-8DEA-F4B9FDAFD861}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
