@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PeopleKPMG.Core.Interfaces
 {
-    internal interface Interface1
+    public interface Interface1
     {
         Task<IEnumerable<Person>> GetAll();
         Task<Person> GetById(int id);
