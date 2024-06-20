@@ -14,7 +14,6 @@ namespace PeopleKPMG.Application.Services
             _personRepository = personRepository;
         }
 
-
         public async Task AddPersonAsync(PersonDto personDto)
         {
             var person = new Person
@@ -55,7 +54,7 @@ namespace PeopleKPMG.Application.Services
         public async Task<PersonDto> GetPersonByIdAsync(int id)
         {
             var person = await _personRepository.GetByIdAsync(id);
-            if(person == null) return null;
+            if (person == null) return null;
 
             return new PersonDto
             {
