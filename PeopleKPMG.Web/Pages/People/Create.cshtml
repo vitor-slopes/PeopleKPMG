@@ -1,0 +1,66 @@
+﻿@page
+@model PeopleKPMG.Web.Pages.People.CreateModel
+@{
+    ViewData["Title"] = "Informações do Colaborador";
+}
+
+<h1>Informações do Colaborador</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Person.Name" class="control-label">Nome Completo</label>
+        <input asp-for="Person.Name" class="form-control" />
+        <span asp-validation-for="Person.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Person.Age" class="control-label">Idade</label>
+        <input asp-for="Person.Age" class="form-control" />
+        <span asp-validation-for="Person.Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Possui dependentes?</label>
+        <select id="hasDependents" class="form-control" asp-for="HasDependents">
+            <option value="Não">Não</option>
+            <option value="Sim">Sim</option>
+        </select>
+    </div>
+
+    <div id="dependentsSection" style="display: none;">
+        <h3>Dependentes</h3>
+        <div id="dependentsContainer"></div>
+
+        <button type="button" class="btn btn-secondary" onclick="addDependentFields()">Adicionar Dependente</button>
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <a asp-page="Index" class="btn btn-secondary">Retornar ao menu principal</a>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('hasDependents').addEventListener('change', function () {
+            var display = this.value === 'Sim' ? 'block' : 'none';
+            document.getElementById('dependentsSection').style.display = display;
+            if (this.value === 'Não') {
+                document.getElementById('dependentsContainer').innerHTML = '';
+            }
+        });
+
+        function addDependentFields() {
+            var container = document.getElementById('dependentsContainer');
+            var index = container.children.length / 2;
+            var html = `
+                        <div class="form-group">
+                            <label class="control-label">Nome do Dependente</label>
+                            <input type="text" name="Person.Dependents[${index}].Name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Idade do Dependente</label>
+                            <input type="number" name="Person.Dependents[${index}].Age" class="form-control" />
+                        </div>
+                    `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    </script>
+}

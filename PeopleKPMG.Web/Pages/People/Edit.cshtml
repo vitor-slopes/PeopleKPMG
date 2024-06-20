@@ -1,0 +1,62 @@
+﻿@page "{id:int}"
+@model PeopleKPMG.Web.Pages.People.EditModel
+@{
+    ViewData["Title"] = "Editar informações do Colaborador";
+}
+
+<h2>Editar informações do Colaborador</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Person.Id" />
+    <div class="form-group">
+        <label asp-for="Person.Name" class="control-label">Nome Completo</label>
+        <input asp-for="Person.Name" class="form-control" />
+        <span asp-validation-for="Person.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Person.Age" class="control-label">Idade</label>
+        <input asp-for="Person.Age" class="form-control" />
+        <span asp-validation-for="Person.Age" class="text-danger"></span>
+    </div>
+
+    <h3>Dependentes</h3>
+    <div id="dependentsContainer">
+        @for (int i = 0; i < Model.Person.Dependents.Count; i++)
+        {
+            <div class="form-group">
+                <label class="control-label">Nome do Dependente</label>
+                <input type="text" name="Person.Dependents[i].Name" class="form-control" value="@Model.Person.Dependents[i].Name" />
+                <span asp-validation-for="Person.Dependents[i].Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Idade do Dependente</label>
+                <input type="number" name="Person.Dependents[i].Age" class="form-control" value="@Model.Person.Dependents[i].Age" />
+                <span asp-validation-for="Person.Dependents[i].Age" class="text-danger"></span>
+            </div>
+        }
+    </div>
+    <button type="button" onclick="addDependentFields()">Adicionar Dependente</button>
+    <hr />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <script>
+        function addDependentFields() {
+            var container = document.getElementById('dependentsContainer');
+            var index = container.children.length / 2;
+            var html = `
+                                        <div class="form-group">
+                                            <label class="control-label">Nome do Dependente</label>
+                                            <input type="text" name="Person.Dependents[${index}].Name" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Idade do Dependente</label>
+                                            <input type="number" name="Person.Dependents[${index}].Age" class="form-control" />
+                                        </div>
+                                    `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    </script>
+}

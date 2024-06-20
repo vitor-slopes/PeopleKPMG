@@ -1,0 +1,44 @@
+﻿@page
+@model PeopleKPMG.Web.Pages.People.IndexModel
+@{
+    ViewData["Title"] = "Lista de Colaboradores";
+}
+
+<h1>Lista de Colaboradores</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Persons != null && Model.Persons.Any())
+        {
+            foreach (var person in Model.Persons)
+            {
+                <tr>
+                    <td>@person.Name</td>
+                    <td>@person.Age</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@person.Id" class="btn btn">Editar</a>
+                        <a asp-page="Detail" asp-route-id="@person.Id" class="btn btn">Detalhes</a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@person.Id" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">Nenhum registro encontrado.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="Create" class="btn btn-success">Adicionar Colaborador</a>
