@@ -1,0 +1,45 @@
+﻿@page
+@model PeopleKPMG.Web.Pages.People.DetailModel
+@{
+    ViewData["Title"] = "Detalhes do Colaborador";
+}
+
+<h2>Detalhes do Colaborador</h2>
+
+<table style="display:inline-block;" class="table">
+    <tbody>
+        <tr>
+            <td style="font-weight: bold; white-space: nowrap;">Nome: </td>
+            <td style="min-width: 200px">@Model.Person.Name</td>
+            <td style="font-weight: bold; white-space: nowrap;">Idade: </td>
+            <td style="padding-right:300px;">@Model.Person.Age</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Detalhes dos Dependentes</h2>
+
+<table style="display:inline-block;" class="table">
+    <tbody>
+        @if (Model.Person.Dependents != null && Model.Person.Dependents.Count > 0)
+        {
+            @foreach (var dependent in Model.Person.Dependents)
+            {
+                <tr>
+                    <td style="font-weight: bold; white-space: nowrap;">Nome: </td>
+                    <td style="min-width: 200px">@dependent.Name</td>
+                    <td style="font-weight: bold; white-space: nowrap;">Idade: </td>
+                    <td style="padding-right:300px;">@dependent.Age</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">Nenhum dependente encontrado.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="Index" class="btn btn-secondary">Retornar ao menu principal</a>
