@@ -45,6 +45,10 @@ A configuração da URL da API é lida do arquivo de configuração (`appsetting
 
 `OnPostDeleteAsync(int id)` em `IndexModel` demonstra um padrão de tratamento de erros, capturando exceções e retornando respostas apropriadas ao cliente.
 
+## Vídeo de apresentação do projeto ##
+
+https://www.youtube.com/watch?v=7d9L5X10lpY&ab_channel=Vitorslopes
+
 ## Conclusão
 
 Este README fornece uma visão geral do projeto ASP.NET Core para o gerenciamento de informações de pessoas.
